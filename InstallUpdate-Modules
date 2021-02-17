@@ -1,0 +1,22 @@
+#Install Azure CLI
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
+
+#Listar modulos Instalados
+Get-InstalledModule
+
+#Install module AzureRm
+Install-Module -name AzureRM
+Update-Module -Name AzureRM
+
+#Install module Azure
+Install-Module -name Azure
+Update-Module -Name Azure
+
+#Install module Office 365
+Install-Module MSOnline
+
+#Install module CSP
+Install-Module -Name PartnerCenter -AllowClobber
+
+#Updates to powershell help base
+Update-Help
